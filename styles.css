@@ -143,11 +143,12 @@ body {
 
 .service-card {
     background-color: var(--white);
-    padding: 2rem;
     border-radius: 10px;
-    text-align: center;
+    overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -155,20 +156,24 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.service-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
 }
 
 .service-card h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin: 1.5rem 1.5rem 0.5rem 1.5rem;
     font-size: 1.4rem;
 }
 
 .service-card p {
     color: var(--text-light);
     line-height: 1.8;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1;
 }
 
 /* About Section */
@@ -308,6 +313,10 @@ body {
     .services-grid {
         grid-template-columns: 1fr;
     }
+
+    .service-image {
+        height: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -337,5 +346,9 @@ body {
     .contact-form input,
     .contact-form textarea {
         padding: 10px;
+    }
+
+    .service-image {
+        height: 150px;
     }
 }
