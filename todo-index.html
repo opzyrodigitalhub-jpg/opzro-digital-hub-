@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional To-Do List App</title>
+    <link rel="stylesheet" href="todo-styles.css">
+</head>
+<body>
+    <div class="todo-container">
+        <!-- Header -->
+        <header class="todo-header">
+            <h1>My Tasks</h1>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+        </header>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Add a new task..." 
+                    class="task-input"
+                >
+                <select id="categorySelect" class="category-select">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="health">Health</option>
+                    <option value="other">Other</option>
+                </select>
+                <input 
+                    type="date" 
+                    id="dueDateInput" 
+                    class="due-date-input"
+                >
+                <button id="addTaskBtn" class="add-btn">Add Task</button>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="work">Work</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <button class="clear-btn" id="clearCompletedBtn">Clear Completed</button>
+        </div>
+
+        <!-- Tasks List -->
+        <div class="tasks-section">
+            <ul id="tasksList" class="tasks-list"></ul>
+            <div id="emptyState" class="empty-state">
+                <p>📋 No tasks yet. Add one to get started!</p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-section">
+            <div class="stat">
+                <span class="stat-label">Total</span>
+                <span class="stat-value" id="totalTasks">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Active</span>
+                <span class="stat-value" id="activeTasks">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value" id="completedTasks">0</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="todo-script.js"></script>
+</body>
+</html>
