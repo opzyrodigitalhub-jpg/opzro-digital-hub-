@@ -1,0 +1,7 @@
+<!-- Placeholder for Aesthetics Art Framework Service Image -->
+<!-- This is a placeholder. To replace it:
+1. Go to https://github.com/opzyrodigitalhub-jpg/opzro-digital-hub-/blob/main/images/aesthetics-art.txt
+2. Click the edit button (pencil icon)
+3. Upload your actual image file
+4. Name it: aesthetics-art.jpg or aesthetics-art.png
+-->
