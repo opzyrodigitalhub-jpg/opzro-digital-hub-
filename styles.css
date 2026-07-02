@@ -1,10 +1,10 @@
-/* Professional Color Scheme - Modern Minimalist */
+/* Professional Color Scheme - Navy Blue, Gold & White */
 :root {
-    --primary-color: #1a1a2e;      /* Dark Blue */
-    --secondary-color: #0f3460;    /* Deep Blue */
-    --accent-color: #16c784;       /* Teal Green */
+    --primary-color: #001f3f;       /* Deep Navy Blue */
+    --secondary-color: #003d7a;    /* Lighter Navy Blue */
+    --accent-color: #D4AF37;       /* Stunning Gold */
     --light-bg: #f5f7fa;           /* Light Gray */
-    --text-dark: #1a1a2e;          /* Dark Text */
+    --text-dark: #001f3f;          /* Dark Navy Text */
     --text-light: #666666;         /* Light Text */
     --white: #ffffff;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -59,6 +59,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--accent-color);
+    letter-spacing: 0.5px;
 }
 
 .nav-menu {
@@ -72,10 +73,26 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
+    position: relative;
 }
 
 .nav-link:hover {
     color: var(--accent-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -105,24 +122,26 @@ body {
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
-    color: var(--white);
-    padding: 12px 40px;
+    color: var(--primary-color);
+    padding: 14px 45px;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
     font-size: 1.1rem;
+    border: 2px solid var(--accent-color);
 }
 
 .cta-button:hover {
-    background-color: #12a566;
+    background-color: transparent;
+    color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 8px 12px rgba(22, 199, 132, 0.3);
+    box-shadow: 0 8px 12px rgba(212, 175, 55, 0.3);
 }
 
 /* Services Section */
 .services {
-    background-color: var(--light-bg);
+    background-color: var(--white);
     padding: 80px 20px;
 }
 
@@ -133,6 +152,23 @@ body {
     margin-bottom: 3rem;
     text-align: center;
     color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.services .container h2::after,
+.about .container h2::after,
+.contact .container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
 .services-grid {
@@ -149,11 +185,12 @@ body {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    border-top: 4px solid var(--accent-color);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 31, 63, 0.15);
 }
 
 .service-image {
@@ -180,8 +217,8 @@ body {
 
 /* About Section */
 .about {
+    background-color: var(--light-bg);
     padding: 80px 20px;
-    background-color: var(--white);
 }
 
 .about-content {
@@ -199,7 +236,7 @@ body {
 
 /* Contact Section */
 .contact {
-    background-color: var(--light-bg);
+    background-color: var(--white);
     padding: 80px 20px;
 }
 
@@ -222,6 +259,10 @@ body {
     font-size: 1.1rem;
 }
 
+.contact-item p {
+    margin-bottom: 0.5rem;
+}
+
 .contact-item p a {
     color: var(--accent-color);
     text-decoration: none;
@@ -230,7 +271,29 @@ body {
 }
 
 .contact-item p a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.whatsapp-button:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
 }
 
 .contact-form {
@@ -242,7 +305,7 @@ body {
 .contact-form input,
 .contact-form textarea {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
@@ -253,23 +316,24 @@ body {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(22, 199, 132, 0.2);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
 }
 
 .submit-button {
     background-color: var(--accent-color);
-    color: var(--white);
-    padding: 12px 20px;
+    color: var(--primary-color);
+    padding: 14px 20px;
     border: none;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: var(--transition);
     font-size: 1rem;
 }
 
 .submit-button:hover {
-    background-color: #12a566;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -280,6 +344,7 @@ body {
     text-align: center;
     padding: 2rem 0;
     margin-top: 3rem;
+    border-top: 3px solid var(--accent-color);
 }
 
 .footer p {
@@ -322,7 +387,6 @@ body {
         gap: 1.5rem;
     }
 
-    /* Optimized image height for tablet */
     .service-image {
         height: 200px;
         object-fit: cover;
@@ -368,7 +432,7 @@ body {
     }
 
     .cta-button {
-        padding: 10px 30px;
+        padding: 11px 30px;
         font-size: 0.95rem;
     }
 
@@ -451,6 +515,11 @@ body {
     .footer p {
         margin: 0.4rem 0;
         font-size: 0.9rem;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        justify-content: center;
     }
 }
 
